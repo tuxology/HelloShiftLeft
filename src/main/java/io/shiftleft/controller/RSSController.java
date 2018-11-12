@@ -58,7 +58,7 @@ public class RSSController {
         filePath.append(categoryName);
         filePath.append(".xml");
 
-        if(!validateRssFeed(categoryName)) {
+        if(!validateRssFeed(filePath.toString())) {
             response.sendRedirect("/DefaultResponse.xml");
             return response;
         }
@@ -76,7 +76,7 @@ public class RSSController {
             log.error("Exception caught in getRssForCategory " + e.getLocalizedMessage());
         }
 
-        return response;  
+        return response;
 
     }
 
