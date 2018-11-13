@@ -58,14 +58,8 @@ public class RSSController {
         filePath.append(categoryName);
         filePath.append(".xml");
 
-        if(!validateRssFeed(filePath.toString())) {
-            response.sendRedirect("/DefaultResponse.xml");
-            return response;
-        }
-
-
         try {
-            inputStream = new FileInputStream(filePath.toString());
+            inputStream = new FileInputStream(validateRssFeed(filePath.toString()));
             OutputStream out = response.getOutputStream();
             int nextChar;
             while ((nextChar = inputStream.read()) != -1) {
@@ -80,13 +74,11 @@ public class RSSController {
 
     }
 
-    private boolean validateRssFeed(String feedName) {
-        Map<String, String> feed2PathMap = jedis.hgetAll("RSSFEEDS");
-        if(feed2PathMap.containsKey(feedName)) {
-            return true;
-        } else {
-            return false;
-        }
+    private String validateRssFeed(String feedName) {
+        if(!feedName.contains(".."))
+            return feedName;
+        else
+            return feedName.replace("..","");
     }
 
 }
