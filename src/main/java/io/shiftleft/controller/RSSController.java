@@ -1,5 +1,6 @@
 package io.shiftleft.controller;
 
+import io.shiftleft.common.PathValidation;
 import io.shiftleft.exception.InvalidCustomerRequestException;
 
 
@@ -53,13 +54,16 @@ public class RSSController {
     public HttpServletResponse getRssForCategorySafe(@PathVariable("categoryName") String categoryName, HttpServletResponse response ) throws IOException {
 
         InputStream inputStream = null;
+        PathValidation pathValidation = new PathValidation();
 
         StringBuffer filePath = new StringBuffer(productRssDestinationFolder);
         filePath.append(categoryName);
         filePath.append(".xml");
 
         try {
-            inputStream = new FileInputStream(validateRssFeed(filePath.toString()));
+
+            String validatedFeed = pathValidation.validateRssFeed(filePath.toString());
+            inputStream = new FileInputStream(validatedFeed);
             OutputStream out = response.getOutputStream();
             int nextChar;
             while ((nextChar = inputStream.read()) != -1) {
@@ -74,11 +78,6 @@ public class RSSController {
 
     }
 
-    private String validateRssFeed(String feedName) {
-        if(!feedName.contains(".."))
-            return feedName;
-        else
-            return feedName.replace("..","");
-    }
+
 
 }
