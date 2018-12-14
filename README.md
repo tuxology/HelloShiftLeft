@@ -74,6 +74,3 @@ It raises and alert dialogue and returns the Customer object data.
 # Change to trigger build #1
 
 
-Test Line
-Test Line 1
-
