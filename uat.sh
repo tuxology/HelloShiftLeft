@@ -1,4 +1,4 @@
-sl run -- java -jar target/hello-shiftleft-0.0.3.jar &
+sl run -- java -jar target/hello-shiftleft-0.0.4.jar &
 sleep 60
 curl http://localhost:8081/customers/1
 curl http://localhost:8081/customers/

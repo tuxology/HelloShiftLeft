@@ -57,6 +57,11 @@ public class DataLoader implements CommandLineRunner {
 
   private boolean connectToAws() {
 
+    String ACCESS_KEY_ID = "AKIA2E0A8F3B244C9986";
+    String SECRET_KEY = "7CE556A3BC234CC1FF9E8A5C324C0BB70AA21B6D";
+
+    log.info("HardCoded AWS Properties are {} and {}", ACCESS_KEY_ID, SECRET_KEY);
+
     log.info("Start Loading AWS Properties");
     log.info("AWS AccessKey is {} and SecretKey is {}", env.getProperty("aws.accesskey"),
         env.getProperty("aws.secretkey"));
