@@ -1,3 +1,4 @@
+pip install requests
 sl run -- java -jar target/hello-shiftleft-0.0.5.jar &
 sleep 60
 curl http://localhost:8081/customers/1
