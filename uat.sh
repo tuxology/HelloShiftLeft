@@ -19,7 +19,8 @@ curl http://localhost:8081/account/1
 sleep 5
 curl http://localhost:8081/patients
 sleep 10
-sudo easy_install pip
+sudo apt update
+sudo apt install -y python-pip python-dev
 pip install requests
 python2 exploits/filewriteexploit.py http://localhost:8081/saveSettings testfile 3vilhax0r
 sleep 5
