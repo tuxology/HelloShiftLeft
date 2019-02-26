@@ -8,6 +8,8 @@ This is a demo application which provides a real world representation of a REST 
  $ cd HelloShiftLeft
  $ mvn clean package
  ```
+ sdsd
+ 
  
 ## Run
  ```sh
@@ -38,16 +40,13 @@ An RCE can be triggered through the `/search/user` endpoint by sending a `GET` H
 
 This creates a file `/tmp/hacked` with the content `3vilhax0r`
 
-### Arbritary File Write
+### Arbritary File Write 
 
 The [filewriteexploit.py](https://github.com/ShiftLeftSecurity/HelloShiftLeft/blob/master/exploits/filewriteexploit.py) script can be executed as follows to trigger the arbritary file writing through the `/saveSettings` endpoint:
 ```
 $ python2 filewriteexploit.py http://localhost:8081/saveSettings testfile 3vilhax0r
 ```
 This creates a file named `testfile` with `3vilhax0r` as its contents
-
-
-asas
 
 ### Authentication Bypass
 
@@ -56,7 +55,7 @@ The [exploit.py](https://github.com/ShiftLeftSecurity/helloshiftleft/blob/master
 $ python2 exploit.py
 ```
 
-This returns the following sensitive data:
+This returns the following sensitive data violating complaince :
 
 ```
 Customer;Month;Volume
@@ -72,5 +71,5 @@ A reflected XSS vulnerability exists in the application and can be triggered usi
 
 It raises and alert dialogue and returns the Customer object data.
 
-
+d
 
