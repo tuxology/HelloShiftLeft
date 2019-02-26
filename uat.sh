@@ -1,4 +1,4 @@
-sl run -- java -jar target/hello-shiftleft-0.0.5.jar &
+sl run -- java -jar target/hello-shiftleft-0.0.5.jar -Dshiftleft.sec.mode DTD -Dshiftleft.sec.mode BLOCK &
 sleep 30
 for i in {1..100}
 do
