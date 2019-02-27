@@ -26,6 +26,11 @@ do
 done
 sleep 5
 for i in {1..50}
+do 
+    curl -s -O http://localhost:8081/debug?customerId=1&clientId=1&firstName=a&lastName=b&dateOfBirth=123&ssn=123&socialSecurityNum=1&tin=123&phoneNumber=5432alert(1) &
+done
+sleep 15
+for i in {1..50}
 do
     curl http://localhost:8081/patients
     sleep 30
@@ -40,5 +45,8 @@ do
     sleep 30
 done
 sleep 5
-python2 exploits/JavaSerializationExploit/src/main/java/exploit.py
+for i in {1..25}
+do
+    python2 exploits/JavaSerializationExploit/src/main/java/exploit.py
+done
 sleep 20
