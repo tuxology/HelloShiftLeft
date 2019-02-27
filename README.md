@@ -31,10 +31,7 @@ Once the application starts, vulnerabilites and exposures in it can be tested wi
 
 All the above requests leak sensitive medical and PII data to the logging service. In addition other endpoints such as `/saveSettings`, `/search/user`, `/admin/login` etc. are also available. Along with the list above, users can explore variations of `GET`, `POST` and `PUT` requests sent to these endpoints.
 
-
 ### Remote Code Execution
-
-
 
 An RCE can be triggered through the `/search/user` endpoint by sending a `GET` HTTP request as follows:
 
